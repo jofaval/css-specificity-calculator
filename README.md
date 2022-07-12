@@ -18,6 +18,7 @@ Simplify your CSS debugging
 It's main idea is to provide an easy-to-use calculator for specificty. Why? Because it happened be something "problematic" while debugging a CSS rule between thousands of lines.
 
 ## What is specificty?
+[Back to the top](#contents)
 
 It's the good fix to avoid using **`!important`**, and to understand why, at times, it seems like the only option available.
 
@@ -26,6 +27,7 @@ CSS are Cascading Style-Sheets, cascading means that there's inheritance, and th
 Specificty is the points given to a CSS selector that determine it's priority, when two selects have the same specificty, the latter will apply.
 
 ### Points system
+[Back to the top](#contents)
 
 - **`html-tag`**, _1 point per element_, the lowest of them all, a simple html tag.
 - **`.my-class`**, _10 points per class_, a CSS class given to an HTML element.
@@ -39,6 +41,7 @@ Specificty is the points given to a CSS selector that determine it's priority, w
 User interface should and will be added later on, at the moment, only scripts are avaible.
 
 ### Javascript
+[Back to the top](#contents)
 
 Implement user interaction, at this point in time, requires javascript. It's also a widely used and understand language.
 
@@ -55,6 +58,7 @@ node ./src/utils/specificty.utils.js
 ```
 
 ### Python
+[Back to the top](#contents)
 
 At first, I intended to only use python, and to add it to my [utilities' repository](https://github.com/jofaval/utilities), but it'd be damn useful to use it with javascript aswell.
 
