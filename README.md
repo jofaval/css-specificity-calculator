@@ -1,11 +1,11 @@
-# Specificty Calculator #
+# Specificity Calculator #
 
 Simplify your CSS debugging
 
 ## Contents
 
 1. [Description](#description)
-1. [What is specificty?](#what-is-specificty)
+1. [What is specificity?](#what-is-specificity)
     1. [Points system](#points-system)
 1. [Usage](#usage)
     1. [Javascript](#javascript)
@@ -15,16 +15,16 @@ Simplify your CSS debugging
 ## Description
 [Back to the top](#contents)
 
-It's main idea is to provide an easy-to-use calculator for specificty. Why? Because it happened be something "problematic" while debugging a CSS rule between thousands of lines.
+It's main idea is to provide an easy-to-use calculator for specificity. Why? Because it happened be something "problematic" while debugging a CSS rule between thousands of lines.
 
-## What is specificty?
+## What is specificity?
 [Back to the top](#contents)
 
 It's the good fix to avoid using **`!important`**, and to understand why, at times, it seems like the only option available.
 
 CSS are Cascading Style-Sheets, cascading means that there's inheritance, and that inheritance can overwrite your styles. You could change the order in which you import your styles, but that won't always fix the solution, you'd be fixing the surface, but not the root.
 
-Specificty is the points given to a CSS selector that determine it's priority, when two selects have the same specificty, the latter will apply.
+Specificity is the points given to a CSS selector that determine it's priority, when two selects have the same specificity, the latter will apply.
 
 ### Points system
 [Back to the top](#contents)
@@ -48,13 +48,13 @@ Implement user interaction, at this point in time, requires javascript. It's als
 On a Linux/Unix system:
 
 ```bash
-node ./src/utils/specificty.utils.js
+node ./src/utils/specificity.utils.js
 ```
 
 On a Windows system
 
 ```bash
-node ./src/utils/specificty.utils.js
+node ./src/utils/specificity.utils.js
 ```
 
 ### Python
@@ -65,13 +65,13 @@ At first, I intended to only use python, and to add it to my [utilities' reposit
 On a Linux/Unix system:
 
 ```bash
-python3 ./src/utils/specificty.utils.py
+python3 ./src/utils/specificity.utils.py
 ```
 
 On a Windows system
 
 ```bash
-python ./src/utils/specificty.utils.py
+python ./src/utils/specificity.utils.py
 ```
 
 ## License
