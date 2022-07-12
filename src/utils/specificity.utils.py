@@ -57,7 +57,8 @@ def get_specificity_points(
 
 def evaluate_css_rules(
     rules: List[str],
-    ascending: bool = False
+    ascending: bool = False,
+    with_scores=True,
 ) -> List[Tuple[str, int]]:
     """
     Evaluates multiple CSS rules and sorts them
@@ -66,6 +67,8 @@ def evaluate_css_rules(
         The rules to evaluate
     ascending : bool
         If it will be ascending, it won't by default
+    with_scores : bool
+        Will it return the scores, it will by default
 
     returns List[Tuple[str, int]]
     """
@@ -74,6 +77,10 @@ def evaluate_css_rules(
         rules
     )
     sorted_rules = sorted(rules_with_specificity, reverse=ascending)
+
+    if not with_scores:
+        sorted_rules = map(lambda rule, _: rule, sorted_rules)
+
     return sorted_rules
 
 
@@ -98,3 +105,14 @@ if __name__ == '__main__':
     ) == get_specificity_points(
         "#unique-id .my-class my-cool-html-tag"
     )
+
+    # should evaluate multiple at once
+    assert evaluate_css_rules(
+        rules=[
+            "my-lonely-html-tag",
+            "#unique-id > .my-class + my-cool-html-tag",
+        ]
+    ) == [
+        ("#unique-id > .my-class + my-cool-html-tag", 111),
+        ("my-lonely-html-tag", 1),
+    ]

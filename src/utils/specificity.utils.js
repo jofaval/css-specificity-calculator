@@ -30,4 +30,34 @@ const getSpecificityPoints = (instruction) => {
   return points;
 };
 
-export default { getRulePoints, getSpecificityPoints };
+/**
+ * Evaluates multiple rules at once
+ * @param {Array} rules All of the rules to evaluate
+ * @param {boolean?} ascending If it will be ascending, it won't by default
+ * @param {boolean?} with_scores Will it return the scores, it will by default
+ * @returns {Array} The same array sorted
+ */
+const evaluateRules = ({ rules, ascending = false, withScores = true }) => {
+  const rulesWithScores = rules.map((rule) => [
+    rule,
+    getSpecificityPoints(rule),
+  ]);
+
+  let sortedRules = rulesWithScores.sort((a, b) => {
+    if (a == b) return 0;
+
+    // If the condition is true, it will be a one, if it's not, it will be converted to -1
+    let result = ascending ? Number(a < b) : Number(a > b);
+    if (result == 0) result = -1;
+
+    return result;
+  });
+
+  if (!withScores) {
+    sortedRules = sortedRules.map((combination) => combination[0]);
+  }
+
+  return sortedRules;
+};
+
+export default { evaluateRules, getRulePoints, getSpecificityPoints };
