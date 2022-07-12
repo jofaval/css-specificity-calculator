@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specificity Calculator</title>
+</head>
+
+<body>
+  <div class="single-rule__container">
+    <section class="single-rule">
+      <form action="" id="singleRuleForm" class="form single-rule__form">
+        <legend class="single-rule__form__legend legend">Single CSS rule</legend>
+        <label class="single-rule__form__label">
+          <input type="text" class="single-rule__form__input">
+        </label>
+        <input type="submit" class="single-rule__form__submit btn btn-primary">
+      </form>
+    </section>
+  </div>
+</body>
+
+<script src="../utils/specificity.utils.js" type="module"></script>
+<script src="../utils/constants/form.constants.js" type="module"></script>
+<script src="../utils/form.utils.js" type="module"></script>
+<script type="module">
+  import { handleForm } from "../utils/constants/form.constants.js"
+
+  const formulary = document.getElementById('singleRuleForm');
+  formulary.onsubmit = function (event) {
+    event.preventDefault();
+    console.log('hola');
+    handleForm(event);
+  };
+</script>
+
+</html>
