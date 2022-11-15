@@ -40,16 +40,15 @@ function handleForm(event, inputType) {
     return false;
   }
 
-  let rule = "";
+  let rule = inputValue;
   let totalPoints = "";
 
   switch (inputType) {
     case INPUT_TYPES.SINGLE:
-      rule = inputValue;
       totalPoints = getSpecificityPoints(rule);
       break;
     case INPUT_TYPES.MULTI:
-      const sortedRules = evaluateRules(rule);
+      const sortedRules = evaluateRules({ rules: rule.split("\n") });
       const [highestPriorityRule] = sortedRules;
       [rule, totalPoints] = highestPriorityRule;
       break;
