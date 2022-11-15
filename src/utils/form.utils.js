@@ -27,14 +27,24 @@ function setSpecificityPoints(points) {
  */
 function handleForm(event, inputType) {
   event.preventDefault();
-  const inputValue = getInputValue(inputType);
-  const totalPoints = getSpecificityPoints(inputValue);
 
-  console.log("SPECIFICITY RESULTS", {
-    inputType,
-    inputValue,
-    totalPoints,
-  });
+  switch (inputType) {
+    case INPUT_TYPES.SINGLE:
+      const inputValue = getInputValue(inputType);
+      const totalPoints = getSpecificityPoints(inputValue);
 
-  setSpecificityPoints(totalPoints);
+      console.info("SPECIFICITY RESULTS", {
+        inputType,
+        inputValue,
+        totalPoints,
+      });
+
+      setSpecificityPoints(
+        `Rule: "${inputValue}" got (${totalPoints}) point(s).`
+      );
+      break;
+
+    default:
+      break;
+  }
 }

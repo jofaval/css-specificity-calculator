@@ -99,6 +99,17 @@ h6 {
   flex-wrap: wrap;
 }
 
+.app > main .results__container {
+  border: thin solid var(--contrast-color);
+  border-radius: var(--xs-spacing);
+  padding: var(--m-spacing);
+}
+
+.app > main .results__content {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 .app > main form input[type="submit"] {
   /* --text-color: var(--accent-color); */
 
