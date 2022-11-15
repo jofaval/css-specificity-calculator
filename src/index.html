@@ -31,7 +31,8 @@
         "public",
         "index.html",
       ].join("/");
-      // window.location.replace(newLocation)
+
+      window.location.replace(newLocation);
       console.log("Redirecting to", newLocation);
     </script>
   </head>
@@ -39,9 +40,11 @@
   <body>
     <!-- Not the highest security -->
     <noscript>
-      <p>This page uses javascript to redirect to the actual page.</p>
-      <br />
-      <a href="./public/index.html">Click here for the manual redirection</a>
+      <div>
+        <p>This page uses javascript to redirect to the actual page.</p>
+        <br />
+        <a href="./public/index.html">Click here for the manual redirection</a>
+      </div>
     </noscript>
   </body>
 </html>
