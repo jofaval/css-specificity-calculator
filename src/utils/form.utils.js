@@ -10,15 +10,7 @@ function getInputValue(inputType) {
     return "";
   }
 
-  switch (inputType) {
-    case INPUT_TYPES.SINGLE:
-      return input.value ?? "";
-    case INPUT_TYPES.MULTI:
-      return input.value?.trim() ?? "";
-
-    default:
-      return "";
-  }
+  return input.value?.trim();
 }
 
 /**
