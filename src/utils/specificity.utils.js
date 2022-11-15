@@ -32,10 +32,11 @@ function getSpecificityPoints(instruction) {
 
 /**
  * Evaluates multiple rules at once
- * @param {Array} rules All of the rules to evaluate
- * @param {boolean?} ascending If it will be ascending, it won't by default
- * @param {boolean?} with_scores Will it return the scores, it will by default
- * @returns {Array} The same array sorted
+ * @param {Object} element All of the rules to evaluate
+ * @param {String[]} element.rules All of the rules to evaluate
+ * @param {boolean?} element.ascending If it will be ascending, it won't by default
+ * @param {boolean?} element.with_scores Will it return the scores, it will by default
+ * @returns {[String, Number][]} The same array sorted
  */
 function evaluateRules({ rules, ascending = false, withScores = true }) {
   const rulesWithScores = rules.map((rule) => [
