@@ -77,15 +77,19 @@
   <script src="../utils/form.utils.js"></script>
   <script>
     (function () {
-      console.log("DOM loaded");
+      console.info("DOM loaded");
 
-      const formulary = document.getElementById("singleRuleForm");
+      document
+        .getElementById("singleRuleForm")
+        .addEventListener("submit", function (event) {
+          return handleForm(event, INPUT_TYPES.SINGLE);
+        });
 
-      formulary.addEventListener("submit", function (event) {
-        event.preventDefault();
-        handleForm(event, INPUT_TYPES.SINGLE);
-        return false;
-      });
+      document
+        .getElementById("multiRuleForm")
+        .addEventListener("submit", function (event) {
+          return handleForm(event, INPUT_TYPES.MULTI);
+        });
     })();
   </script>
 </html>

@@ -5,7 +5,20 @@
  */
 function getInputValue(inputType) {
   const input = document.querySelector(INPUT_QUERIES[inputType]);
-  return input?.value ?? "";
+
+  if (!input) {
+    return "";
+  }
+
+  switch (inputType) {
+    case INPUT_TYPES.SINGLE:
+      return input.value ?? "";
+    case INPUT_TYPES.MULTI:
+      return input.value?.trim() ?? "";
+
+    default:
+      return "";
+  }
 }
 
 /**
@@ -28,31 +41,45 @@ function setSpecificityPoints(points) {
 function handleForm(event, inputType) {
   event.preventDefault();
 
+  const inputValue = getInputValue(inputType);
+
+  if (!inputValue.trim().length) {
+    console.warn("Make sure your input is not empty");
+    return false;
+  }
+
+  let rule = "";
+  let totalPoints = "";
+
   switch (inputType) {
     case INPUT_TYPES.SINGLE:
-      const inputValue = getInputValue(inputType);
-
-      if (!inputValue.trim().length) {
-        console.warn("Make sure your input is not empty");
-        return;
-      }
-
-      const totalPoints = getSpecificityPoints(inputValue);
-
-      console.info("SPECIFICITY RESULTS", {
-        inputType,
-        inputValue,
-        totalPoints,
-      });
-
-      const plural = totalPoints === 1 ? "s" : "";
-
-      setSpecificityPoints(
-        `Rule: "${inputValue}" got (${totalPoints}) point${plural}.`
-      );
+      rule = inputValue;
+      totalPoints = getSpecificityPoints(rule);
+      break;
+    case INPUT_TYPES.MULTI:
+      const sortedRules = evaluateRules(rule);
+      const [highestPriorityRule] = sortedRules;
+      [rule, totalPoints] = highestPriorityRule;
       break;
 
     default:
       break;
   }
+
+  if (rule && totalPoints) {
+    console.info("SPECIFICITY RESULTS", {
+      inputType,
+      rule,
+      totalPoints,
+    });
+
+    const plural = totalPoints === 1 ? "s" : "";
+
+    setSpecificityPoints(
+      `Rule: "${rule}" got (${totalPoints}) point${plural}.`
+    );
+  }
+
+  // force-stops the event
+  return false;
 }
