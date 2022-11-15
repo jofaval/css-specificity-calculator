@@ -31,6 +31,12 @@ function handleForm(event, inputType) {
   switch (inputType) {
     case INPUT_TYPES.SINGLE:
       const inputValue = getInputValue(inputType);
+
+      if (!inputValue.trim().length) {
+        console.warn("Make sure your input is not empty");
+        return;
+      }
+
       const totalPoints = getSpecificityPoints(inputValue);
 
       console.info("SPECIFICITY RESULTS", {
