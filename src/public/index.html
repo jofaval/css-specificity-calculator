@@ -47,18 +47,17 @@
   </section>
 </body>
 
-<script src="../utils/specificity.utils.js" type="module"></script>
-<script src="../utils/constants/form.constants.js" type="module"></script>
-<script src="../utils/form.utils.js" type="module"></script>
-<script type="module">
-  import { handleForm } from "../utils/constants/form.constants.js"
+<script type="module" src="../utils/form.utils.js">
+  (() => {
+    const formulary = document.getElementById('singleRuleForm');
 
-  const formulary = document.getElementById('singleRuleForm');
-  formulary.onsubmit = function (event) {
-    event.preventDefault();
-    console.log('hola');
-    handleForm(event);
-  };
+    formulary.addEventListener("submit", function (event) {
+      event.preventDefault();
+      console.log('hola');
+      handleForm(event);
+      return false
+    })
+  })()
 </script>
 
 </html>

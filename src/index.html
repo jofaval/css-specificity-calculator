@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+
+    <style>
+      * {
+        transition: all 0.2s ease-in-out;
+        background-color: #fcbf49;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+
+    <script>
+      const currentLocation = window.location.href;
+      const splittedCurrentLocation = currentLocation.split("/");
+      const newLocation = [
+        ...splittedCurrentLocation.slice(0, splittedCurrentLocation.length - 1),
+        "public",
+        "index.html",
+      ].join("/");
+      // window.location.replace(newLocation)
+      console.log("Redirecting to", newLocation);
+    </script>
+  </head>
+
+  <body>
+    <!-- Not the highest security -->
+    <noscript>
+      <p>This page uses javascript to redirect to the actual page.</p>
+      <br />
+      <a href="./public/index.html">Click here for the manual redirection</a>
+    </noscript>
+  </body>
+</html>
