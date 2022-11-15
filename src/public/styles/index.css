@@ -85,12 +85,12 @@ h6 {
 }
 
 .app > main form {
-  --text-color: var(--accent-color);
+  /* --text-color: var(--accent-color); */
 
   border: thin solid var(--contrast-color);
   border-radius: var(--xs-spacing);
   padding: var(--m-spacing);
-  background-color: var(--contrast-color);
+  /* background-color: var(--contrast-color); */
 
   display: flex;
   flex-direction: column;
@@ -100,17 +100,19 @@ h6 {
 }
 
 .app > main form input[type="submit"] {
-  --text-color: var(--accent-color);
+  /* --text-color: var(--accent-color); */
 
-  background: none;
   border: none;
 
-  background-color: var(--primary-color);
+  background-color: var(--tertiary-color);
   padding: var(--s-spacing);
   border-radius: var(--s-spacing);
 
   font-weight: bold;
   text-transform: uppercase;
+
+  border: thin;
+  border: thin solid var(--contrast-color);
 }
 
 .app > main form.multi-rule__form {
@@ -120,7 +122,7 @@ h6 {
 .app > main form :is(input[type="text"], textarea) {
   --text-color: var(--contrast-color);
 
-  border: 1px solid var(--contrast-color);
+  border: thin solid var(--contrast-color);
   outline: none;
 
   width: 100%;
