@@ -103,6 +103,8 @@ h6 {
   border: thin solid var(--contrast-color);
   border-radius: var(--xs-spacing);
   padding: var(--m-spacing);
+
+  background-color: var(--accent-color);
 }
 
 .app > main .results__content {
