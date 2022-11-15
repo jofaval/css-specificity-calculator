@@ -1,6 +1,21 @@
+/* 
+COLOR PALETTE CREDITS:
+https://www.saasdesign.io/good-color-combinations/
+*/
+
 :root {
-  --contrast: black;
-  --text-color: black;
+  --contrast-color: #003049;
+  --primary-color: #d62828;
+  --secondary-color: #f77f00;
+  --tertiary-color: #fcbf49;
+  --accent-color: #eae2b7;
+
+  --text-color: var(--contrast-color);
+
+  --max-width-responsive: 1350px;
+  --xs-spacing: 0.25rem;
+  --s-spacing: 0.5rem;
+  --m-spacing: 1rem;
 }
 
 * {
@@ -23,12 +38,17 @@ h6 {
 }
 
 .app :is(.header, .footer) {
-  padding: 0.5rem 1rem;
+  padding: var(--s-spacing) var(--m-spacing);
 }
 
 .app .header {
-  --text-color: white;
-  background-color: rgb(51, 30, 170);
+  --text-color: var(--contrast-color);
+  background-color: var(--primary-color);
+}
+
+.app .header .header__content {
+  max-width: var(--max-width-responsive);
+  margin: 0 auto;
 }
 
 .app {
@@ -44,25 +64,25 @@ h6 {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: center;
+  align-items: stretch;
 
-  gap: 1rem;
-  padding: 1rem 0.5rem;
+  gap: var(--m-spacing);
+  padding: var(--m-spacing);
 
-  background-color: rgb(207, 59, 175);
+  background-color: var(--tertiary-color);
 }
 
 .app > main form {
-  border: thin solid black;
-  border-radius: 0.25rem;
-  padding: 1rem;
+  border: thin solid var(--contrast-color);
+  border-radius: var(--xs-spacing);
+  padding: var(--m-spacing);
 
   min-width: 95vw;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--m-spacing);
   flex-wrap: wrap;
 }
 
@@ -71,9 +91,13 @@ h6 {
 }
 
 .app > main form :is(input[type="text"], textarea) {
+  border: 1px solid var(--contrast-color);
   width: 100%;
+  padding: var(--s-spacing);
+  border-radius: var(--xs-spacing);
 
   font-family: "Courier New", Courier, monospace;
+  background-color: transparent;
 }
 
 .app > main .multi-rule__form {
@@ -87,12 +111,15 @@ h6 {
 
 .app > main .multi-rule__form textarea {
   resize: none;
-  padding: 0.5rem;
+
   height: 100%;
+
+  scrollbar-color: var(--contrast-color) transparent;
+  scrollbar-width: thin;
 }
 
 .footer {
-  --text-color: white;
+  --text-color: var(--contrast-color);
   text-align: center;
-  background-color: rgb(170, 30, 112);
+  background-color: var(--secondary-color);
 }
