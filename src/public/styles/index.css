@@ -1,0 +1,78 @@
+:root {
+    --contrast: black;
+    --text-color: black;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.header,
+.footer {
+    padding: 0.5rem 1rem;
+}
+
+.app {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.app>main {
+    flex: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.app>main form {
+    border: thin solid black;
+    border-radius: .25rem;
+    padding: 1rem;
+
+    min-width: 95vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.app>main form.multi-rule__form {
+    flex: 100%;
+}
+
+.app>main form :is(input[type="text"], textarea) {
+    width: 100%;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.app>main form textarea {
+    resize: vertical;
+    min-height: 60vh;
+}
+
+.footer {
+    text-align: center;
+}

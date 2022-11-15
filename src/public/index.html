@@ -6,10 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Specificity Calculator</title>
+
+  <link rel="stylesheet" href="./styles/index.css">
 </head>
 
 <body>
-  <section class="single-rule">
+  <section class="app" id="app">
     <header class="header">
       <h1 class="header__title">CSS Specificity Calculator</h1>
     </header>
@@ -22,7 +24,17 @@
           <input type="text" class="single-rule__form__input">
         </label>
 
-        <input type="submit" class="single-rule__form__submit btn btn-primary">
+        <input type="submit" value="Calculate" class="single-rule__form__submit btn btn-primary">
+      </form>
+
+      <form action="" id="multiRuleForm" class="form multi-rule__form">
+        <legend class="multi-rule__form__legend legend">Multi CSS rule</legend>
+
+        <label class="multi-rule__form__label">
+          <textarea type="text" class="multi-rule__form__textarea" rows="8"></textarea>
+        </label>
+
+        <input type="submit" value="Calculate" class="multi-rule__form__submit btn btn-primary">
       </form>
     </main>
 
