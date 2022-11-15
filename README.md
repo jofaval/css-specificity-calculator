@@ -5,6 +5,7 @@ Simplify your CSS debugging
 ## Contents
 
 1. [Description](#description)
+1. [Motivation](#motivation)
 1. [What is specificity?](#what-is-specificity)
    1. [Points system](#points-system)
 1. [Usage](#usage)
@@ -17,6 +18,12 @@ Simplify your CSS debugging
 [Back to the top](#contents)
 
 It's main idea is to provide an easy-to-use calculator for specificity. Why? Because it happened be something "problematic" while debugging a CSS rule between thousands of lines.
+
+## Motivation
+
+[Back to the top](#contents)
+
+It happend at work, while helping a junior debug a (theme) style some obscure element in a legacy codebase. It so happened that specificity was one way to approach the problem.
 
 ## What is specificity?
 
