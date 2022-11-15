@@ -3,7 +3,7 @@
  * @param {string} rule The rule to evaluate
  * @returns {number} The number of points of that CSS selector
  */
-const getRulePoints = (rule) => {
+function getRulePoints(rule) {
   const firstCharacter = rule.charAt(0);
   switch (firstCharacter) {
     case ".":
@@ -14,21 +14,21 @@ const getRulePoints = (rule) => {
     default:
       return firstCharacter.match(/[a-z]/i) ? 1 : 0;
   }
-};
+}
 
 /**
  * Calculates the points of a CSS instruction
  * @param {string} instruction The CSS instruction to evaluate
  * @returns {number} The total points
  */
-const getSpecificityPoints = (instruction) => {
+function getSpecificityPoints(instruction) {
   const selectors = instruction.split(" ");
   const points = selectors.reduce(
     (prev, curr) => prev + getRulePoints(curr),
     0
   );
   return points;
-};
+}
 
 /**
  * Evaluates multiple rules at once
@@ -37,7 +37,7 @@ const getSpecificityPoints = (instruction) => {
  * @param {boolean?} with_scores Will it return the scores, it will by default
  * @returns {Array} The same array sorted
  */
-const evaluateRules = ({ rules, ascending = false, withScores = true }) => {
+function evaluateRules({ rules, ascending = false, withScores = true }) {
   const rulesWithScores = rules.map((rule) => [
     rule,
     getSpecificityPoints(rule),
@@ -47,7 +47,7 @@ const evaluateRules = ({ rules, ascending = false, withScores = true }) => {
     if (a == b) return 0;
 
     // If the condition is true, it will be a one, if it's not, it will be converted to -1
-    let result = ascending ? Number(a < b) : Number(a > b);
+    let result = Number(ascending ? a < b : a > b);
     if (result == 0) result = -1;
 
     return result;
@@ -58,6 +58,4 @@ const evaluateRules = ({ rules, ascending = false, withScores = true }) => {
   }
 
   return sortedRules;
-};
-
-export default { evaluateRules, getRulePoints, getSpecificityPoints };
+}

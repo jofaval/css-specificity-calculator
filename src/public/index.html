@@ -1,63 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Specificity Calculator</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Specificity Calculator</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
 
-  <link rel="stylesheet" href="./styles/index.css">
-</head>
+  <body>
+    <section class="app" id="app">
+      <header class="header">
+        <nav class="header__content">
+          <h1 class="header__title">CSS Specificity Calculator</h1>
+        </nav>
+      </header>
 
-<body>
-  <section class="app" id="app">
-    <header class="header">
-      <nav class="header__content">
-        <h1 class="header__title">CSS Specificity Calculator</h1>
-      </nav>
-    </header>
+      <main class="rule__container">
+        <form action="" id="singleRuleForm" class="form single-rule__form">
+          <legend class="single-rule__form__legend legend">
+            Single CSS rule
+          </legend>
 
-    <main class="rule__container">
-      <form action="" id="singleRuleForm" class="form single-rule__form">
-        <legend class="single-rule__form__legend legend">Single CSS rule</legend>
+          <label class="single-rule__form__label">
+            <input type="text" class="single-rule__form__input" />
+          </label>
 
-        <label class="single-rule__form__label">
-          <input type="text" class="single-rule__form__input">
-        </label>
+          <input
+            type="submit"
+            value="Calculate"
+            class="single-rule__form__submit btn btn-primary"
+          />
+        </form>
 
-        <input type="submit" value="Calculate" class="single-rule__form__submit btn btn-primary">
-      </form>
+        <form action="" id="multiRuleForm" class="form multi-rule__form">
+          <legend class="multi-rule__form__legend legend">
+            Multi CSS rule
+          </legend>
 
-      <form action="" id="multiRuleForm" class="form multi-rule__form">
-        <legend class="multi-rule__form__legend legend">Multi CSS rule</legend>
+          <label class="multi-rule__form__label">
+            <textarea
+              type="text"
+              class="multi-rule__form__textarea"
+              rows="8"
+            ></textarea>
+          </label>
 
-        <label class="multi-rule__form__label">
-          <textarea type="text" class="multi-rule__form__textarea" rows="8"></textarea>
-        </label>
+          <input
+            type="submit"
+            value="Calculate"
+            class="multi-rule__form__submit btn btn-primary"
+          />
+        </form>
+      </main>
 
-        <input type="submit" value="Calculate" class="multi-rule__form__submit btn btn-primary">
-      </form>
-    </main>
+      <footer class="footer">
+        Developed by <a href="https://github.com/jofaval">@jofaval</a>. Deployed
+        with love at Github Pages using Github Actions
+      </footer>
+    </section>
+  </body>
 
-    <footer class="footer">
-      Developed by <a href="https://github.com/jofaval">@jofaval</a>.
-      Deployed with love at Github Pages using Github Actions
-    </footer>
-  </section>
-</body>
+  <script src="../utils/constants/form.constants.js"></script>
+  <script src="../utils/specificity.utils.js"></script>
+  <script src="../utils/form.utils.js"></script>
+  <script>
+    (function () {
+      console.log("DOM loaded");
 
-<script type="module" src="../utils/form.utils.js">
-  (() => {
-    const formulary = document.getElementById('singleRuleForm');
+      const formulary = document.getElementById("singleRuleForm");
 
-    formulary.addEventListener("submit", function (event) {
-      event.preventDefault();
-      console.log('hola');
-      handleForm(event);
-      return false
-    })
-  })()
-</script>
-
+      formulary.addEventListener("submit", function (event) {
+        event.preventDefault();
+        handleForm(event, INPUT_TYPES.SINGLE);
+        return false;
+      });
+    })();
+  </script>
 </html>
