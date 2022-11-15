@@ -3,3 +3,4 @@ Evaluate !important sentences in the CSS rules
 Being able to compare and evaluate multiple CSS rules at once so that we can determine which one is the one with the highest specificity
 Fix tests in JS, now that elements do not export themselves
 Use the multirule input and implement it
+Allow for CSS to be dropped in the textarea, might be too much for this project's scope (have some fun and do a small poc)
