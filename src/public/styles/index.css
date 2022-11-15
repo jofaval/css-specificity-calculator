@@ -1,12 +1,24 @@
 :root {
-    --contrast: black;
-    --text-color: black;
+  --contrast: black;
+  --text-color: black;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color: var(--text-color);
 }
 
 * {
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 html,
@@ -17,62 +29,74 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .header,
 .footer {
-    padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .app {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.app>main {
-    flex: 100%;
+.app > main {
+  flex: 100%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 
-    gap: 2rem;
+  gap: 2rem;
 }
 
-.app>main form {
-    border: thin solid black;
-    border-radius: .25rem;
-    padding: 1rem;
+.app > main form {
+  border: thin solid black;
+  border-radius: 0.25rem;
+  padding: 1rem;
 
-    min-width: 95vw;
+  min-width: 95vw;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.app>main form.multi-rule__form {
-    flex: 100%;
+.app > main form.multi-rule__form {
+  flex: 100%;
 }
 
-.app>main form :is(input[type="text"], textarea) {
-    width: 100%;
+.app > main form :is(input[type="text"], textarea) {
+  width: 100%;
 
-    font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
-.app>main form textarea {
-    resize: vertical;
-    min-height: 60vh;
+.app > main .multi-rule__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.app > main .multi-rule__form .multi-rule__form__label {
+  flex: 100%;
+}
+
+.app > main .multi-rule__form textarea {
+  resize: none;
+  padding: 0.5rem;
+  height: 100%;
 }
 
 .footer {
-    text-align: center;
+  text-align: center;
+  background-color: purple;
+  color: white;
 }
