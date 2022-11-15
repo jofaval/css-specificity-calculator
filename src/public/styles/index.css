@@ -25,6 +25,10 @@ https://www.saasdesign.io/good-color-combinations/
   color: var(--text-color);
 }
 
+body {
+  background-color: var(--tertiary-color);
+}
+
 html,
 body,
 h1,
@@ -43,7 +47,11 @@ h6 {
 
 .app .header {
   --text-color: var(--contrast-color);
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
+
+  border-bottom: thin solid var(--contrast-color);
+  border-end-start-radius: var(--s-spacing);
+  border-end-end-radius: var(--s-spacing);
 }
 
 .app .header .header__content {
@@ -68,14 +76,15 @@ h6 {
 
   gap: var(--m-spacing);
   padding: var(--m-spacing);
-
-  background-color: var(--tertiary-color);
 }
 
 .app > main form {
+  --text-color: var(--accent-color);
+
   border: thin solid var(--contrast-color);
   border-radius: var(--xs-spacing);
   padding: var(--m-spacing);
+  background-color: var(--contrast-color);
 
   min-width: 95vw;
 
@@ -86,18 +95,36 @@ h6 {
   flex-wrap: wrap;
 }
 
+.app > main form input[type="submit"] {
+  --text-color: var(--accent-color);
+
+  background: none;
+  border: none;
+
+  background-color: var(--primary-color);
+  padding: var(--s-spacing);
+  border-radius: var(--s-spacing);
+
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .app > main form.multi-rule__form {
   flex: 100%;
 }
 
 .app > main form :is(input[type="text"], textarea) {
+  --text-color: var(--contrast-color);
+
   border: 1px solid var(--contrast-color);
+  outline: none;
+
   width: 100%;
   padding: var(--s-spacing);
   border-radius: var(--xs-spacing);
 
   font-family: "Courier New", Courier, monospace;
-  background-color: transparent;
+  background-color: var(--accent-color);
 }
 
 .app > main .multi-rule__form {
@@ -118,8 +145,11 @@ h6 {
   scrollbar-width: thin;
 }
 
-.footer {
-  --text-color: var(--contrast-color);
+.app .footer {
   text-align: center;
   background-color: var(--secondary-color);
+
+  border-top: thin solid var(--contrast-color);
+  border-start-start-radius: var(--s-spacing);
+  border-start-end-radius: var(--s-spacing);
 }
