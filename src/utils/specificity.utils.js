@@ -56,7 +56,7 @@ function evaluateRules({ rules, ascending = false, withScores = true }) {
 
     // If the condition is true, it will be a one, if it's not, it will be converted to -1
     let result = Number(ascending ? a < b : a > b);
-    if (result == 0) result = 1;
+    if (result == 0) result = -1;
 
     return result;
   });
