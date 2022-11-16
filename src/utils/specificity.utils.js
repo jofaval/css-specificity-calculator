@@ -5,6 +5,13 @@
  */
 function getRulePoints(rule) {
   const firstCharacter = rule.charAt(0);
+
+  if (rule.length === 1) {
+    return 1;
+  } else if (rule.length <= 0) {
+    return 0;
+  }
+
   switch (firstCharacter) {
     case ".":
       return 10;
