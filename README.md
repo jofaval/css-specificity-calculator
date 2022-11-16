@@ -25,6 +25,8 @@ It's main idea is to provide an easy-to-use calculator for specificity. Why? Bec
 
 It happend at work, while helping a junior debug a (theme) style some obscure element in a legacy codebase. It so happened that specificity was one way to approach the problem.
 
+Original concept at: [https://jofaval.github.io/learn-it/examples/selectors/index.html](https://jofaval.github.io/learn-it/examples/selectors/index.html).
+
 ## What is specificity?
 
 [Back to the top](#contents)
