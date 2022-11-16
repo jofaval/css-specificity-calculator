@@ -66,7 +66,7 @@ function handleForm(event, inputType) {
       totalPoints,
     });
 
-    const plural = totalPoints === 1 ? "s" : "";
+    const plural = totalPoints !== 1 ? "s" : "";
 
     setSpecificityPoints(
       `Rule: "${rule}" got (${totalPoints}) point${plural}.`
