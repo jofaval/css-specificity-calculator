@@ -113,12 +113,12 @@ h6 {
 }
 
 .app > main form input[type="submit"] {
-  /* --text-color: var(--accent-color); */
+  --text-color: var(--accent-color);
 
   border: none;
   cursor: pointer;
 
-  background-color: var(--tertiary-color);
+  background-color: var(--primary-color);
   padding: var(--s-spacing);
   border-radius: var(--s-spacing);
 
