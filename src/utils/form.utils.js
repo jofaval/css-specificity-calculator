@@ -48,7 +48,9 @@ function handleForm(event, inputType) {
       totalPoints = getSpecificityPoints(rule);
       break;
     case INPUT_TYPES.MULTI:
-      const sortedRules = evaluateRules({ rules: rule.split("\n") });
+      const sortedRules = evaluateRules({
+        rules: rule.split("\n").map(Boolean),
+      });
       const [highestPriorityRule] = sortedRules;
       [rule, totalPoints] = highestPriorityRule;
       break;
