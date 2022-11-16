@@ -49,7 +49,7 @@ function handleForm(event, inputType) {
       break;
     case INPUT_TYPES.MULTI:
       const sortedRules = evaluateRules({
-        rules: rule.split("\n").map(Boolean),
+        rules: rule.split(/\n+/),
       });
       const [highestPriorityRule] = sortedRules;
       [rule, totalPoints] = highestPriorityRule;
